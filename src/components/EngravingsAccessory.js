@@ -72,7 +72,7 @@ function EngravingsAccessory() {
             <GroupSelectors>
                 <EngravingGroup>
                     <SlotTitleStyle>Class</SlotTitleStyle>
-                    <SelectStyle value={classData.selectedClass} auto={true} onChange={(e) => {
+                    <SelectStyle value={classData.selectedClass} auto={'true'} onChange={(e) => {
                         classData.changeSelectedClass(e.target.value);
                     }}>
                         {classMenuItems}

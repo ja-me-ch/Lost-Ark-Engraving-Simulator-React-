@@ -12,7 +12,7 @@ const EngravingAndLevel = styled('div')((props) => ({
 export const SelectStyle = styled(Select)((props) => ({
     color: 'rgb(249, 249, 249)',
     width: props.small ? 'auto' : (props.auto ? 'auto' : '210px'),
-    maxWidth: props.auto ? 'auto' : '210px'
+    maxWidth: props.autoSize ? 'auto' : '210px'
 }));
 
 function AccessorySelector(props) {
@@ -103,7 +103,7 @@ function AccessorySelector(props) {
                     </SelectStyle>
                 </FormControl>
                 <FormControl size='small'>
-                    <SelectStyle value={accessory.en1.lvl} small={true} onChange={(e) => {
+                    <SelectStyle value={accessory.en1.lvl} small={'true'} onChange={(e) => {
                         accessory.en1.setLvl(e.target.value);
                     }}>
                         {getLevelMenuItems()}
@@ -119,7 +119,7 @@ function AccessorySelector(props) {
                     </SelectStyle>
                 </FormControl>
                 <FormControl size='small'>
-                    <SelectStyle value={accessory.en2.lvl} small={true} onChange={(e) => {
+                    <SelectStyle value={accessory.en2.lvl} small={'true'} onChange={(e) => {
                         accessory.en2.setLvl(e.target.value);
                     }}>
                         {getLevelMenuItems()}
@@ -135,7 +135,7 @@ function AccessorySelector(props) {
                     </SelectStyle>
                 </FormControl>
                 <FormControl size='small'>
-                    <SelectStyle value={accessory.neg.lvl} small={true} onChange={(e) => {
+                    <SelectStyle value={accessory.neg.lvl} small={'true'} onChange={(e) => {
                         accessory.neg.setLvl(e.target.value);
                     }}>
                         {getLevelMenuItems(true)}
