@@ -1,2 +1,5 @@
 # Lost-Ark-Engraving-Simulator--React-
- Lost Ark Engraving Simulator built in React
+ Todo:
+ --Change title and stuff
+ --Implement Dispatch
+ --Refactor
