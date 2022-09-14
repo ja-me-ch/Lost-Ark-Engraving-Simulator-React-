@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react';
-import { EngravingContext } from '../contexts/EngravingSimulatorContext';
+import React from 'react';
 import { Select, MenuItem, Menu, FormControl } from '@mui/material';
 import { v4 as uuid } from 'uuid';
-import battleEngravings from '../engravings/battleEngravings';
+// import battleEngravings from '../engravings/battleEngravings';
 import { styled } from '@mui/material/styles';
 
 const EngravingAndLevel = styled('div')((props) => ({
@@ -34,7 +33,7 @@ function AccessorySelector(props) {
         }
 
         else if (accessoryType === 'abilityStone') {
-            selectedEngravingList = battleEngravings;
+            selectedEngravingList = battle;
         }
 
         else {
