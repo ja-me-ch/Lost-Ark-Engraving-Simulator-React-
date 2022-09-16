@@ -1,23 +1,7 @@
-// import React, { createContext, useState } from 'react';
-
-// export const EngravingContext = createContext();
-
-// export function LanguageProvider(props) {
-//     const [language, setLanguage] = useState('en');
-//     const changeLanguage = e => {
-//         setLanguage(e.target.value);
-//     }
-
-//     return (
-//         <LanguageContext.Provider value={{ language, changeLanguage }}>
-//             {props.children};
-//         </LanguageContext.Provider>
-//     )
-// }
-
 import React, { createContext, useState } from 'react';
 import classEngravings from '../engravings/classEngravings';
 import battleEngravings from '../engravings/battleEngravings';
+import negativeEngravings from '../engravings/negativeEngravings';
 
 export const EngravingContext = createContext();
 
@@ -35,61 +19,51 @@ export function EngravingProvider(props) {
         return combinedEngravingList;
     }
 
-    const getNegativeEngravingList = function (e) {
-        const negativeEngravings = [
-            'Atk. Speed Reduction',
-            'Atk. Power Reduction',
-            'Defense Reduction',
-            'Move Speed Reduction'
-        ]
-        return negativeEngravings;
-    }
-
     const engravingLists = {
         battle: battleEngravings,
         classEn: classEngravings,
         classBattle: getEngravingList,
-        negative: getNegativeEngravingList
+        negative: negativeEngravings
     }
 
     //necklace
-    const [necklace_en1, setNecklace_en1] = useState(getEngravingList()[0]);
+    const [necklace_en1, setNecklace_en1] = useState(engravingLists.classBattle()[0]);
     const [necklace_en1_lvl, setNecklace_en1_lvl] = useState(0);
-    const [necklace_en2, setNecklace_en2] = useState(getEngravingList()[0]);
+    const [necklace_en2, setNecklace_en2] = useState(engravingLists.classBattle()[0]);
     const [necklace_en2_lvl, setNecklace_en2_lvl] = useState(0);
-    const [necklace_negative, setNecklace_negative] = useState(getNegativeEngravingList()[0]);
+    const [necklace_negative, setNecklace_negative] = useState(engravingLists.negative[0]);
     const [necklace_negative_lvl, setNecklace_negative_lvl] = useState(0);
 
     //earring1
-    const [earring1_en1, setEarring1_en1] = useState(getEngravingList()[0]);
+    const [earring1_en1, setEarring1_en1] = useState(engravingLists.classBattle()[0]);
     const [earring1_en1_lvl, setEarring1_en1_lvl] = useState(0);
-    const [earring1_en2, setEarring1_en2] = useState(getEngravingList()[0]);
+    const [earring1_en2, setEarring1_en2] = useState(engravingLists.classBattle()[0]);
     const [earring1_en2_lvl, setEarring1_en2_lvl] = useState(0);
-    const [earring1_negative, setEarring1_negative] = useState(getNegativeEngravingList()[0]);
+    const [earring1_negative, setEarring1_negative] = useState(engravingLists.negative[0]);
     const [earring1_negative_lvl, setEarring1_negative_lvl] = useState(0);
 
     //earring2
-    const [earring2_en1, setEarring2_en1] = useState(getEngravingList()[0]);
+    const [earring2_en1, setEarring2_en1] = useState(engravingLists.classBattle()[0]);
     const [earring2_en1_lvl, setEarring2_en1_lvl] = useState(0);
-    const [earring2_en2, setEarring2_en2] = useState(getEngravingList()[0]);
+    const [earring2_en2, setEarring2_en2] = useState(engravingLists.classBattle()[0]);
     const [earring2_en2_lvl, setEarring2_en2_lvl] = useState(0);
-    const [earring2_negative, setEarring2_negative] = useState(getNegativeEngravingList()[0]);
+    const [earring2_negative, setEarring2_negative] = useState(engravingLists.negative[0]);
     const [earring2_negative_lvl, setEarring2_negative_lvl] = useState(0);
 
     //ring1
-    const [ring1_en1, setRing1_en1] = useState(getEngravingList()[0]);
+    const [ring1_en1, setRing1_en1] = useState(engravingLists.classBattle()[0]);
     const [ring1_en1_lvl, setRing1_en1_lvl] = useState(0);
-    const [ring1_en2, setRing1_en2] = useState(getEngravingList()[0]);
+    const [ring1_en2, setRing1_en2] = useState(engravingLists.classBattle()[0]);
     const [ring1_en2_lvl, setRing1_en2_lvl] = useState(0);
-    const [ring1_negative, setRing1_negative] = useState(getNegativeEngravingList()[0]);
+    const [ring1_negative, setRing1_negative] = useState(engravingLists.negative[0]);
     const [ring1_negative_lvl, setRing1_negative_lvl] = useState(0);
 
     //ring2
-    const [ring2_en1, setRing2_en1] = useState(getEngravingList()[0]);
+    const [ring2_en1, setRing2_en1] = useState(engravingLists.classBattle()[0]);
     const [ring2_en1_lvl, setRing2_en1_lvl] = useState(0);
-    const [ring2_en2, setRing2_en2] = useState(getEngravingList()[0]);
+    const [ring2_en2, setRing2_en2] = useState(engravingLists.classBattle()[0]);
     const [ring2_en2_lvl, setRing2_en2_lvl] = useState(0);
-    const [ring2_negative, setRing2_negative] = useState(getNegativeEngravingList()[0]);
+    const [ring2_negative, setRing2_negative] = useState(engravingLists.negative[0]);
     const [ring2_negative_lvl, setRing2_negative_lvl] = useState(0);
 
     //ability stone
@@ -97,13 +71,13 @@ export function EngravingProvider(props) {
     const [abilityStone_en1_lvl, setAbilityStone_en1_lvl] = useState(0);
     const [abilityStone_en2, setAbilityStone_en2] = useState(battleEngravings[0]);
     const [abilityStone_en2_lvl, setAbilityStone_en2_lvl] = useState(0);
-    const [abilityStone_neg, setAbiltyStone_neg] = useState(getNegativeEngravingList()[0]);
+    const [abilityStone_neg, setAbiltyStone_neg] = useState(engravingLists.negative[0]);
     const [abilityStone_neg_lvl, setAbilityStone_neg_lvl] = useState(0)
 
     //equipped engravings
-    const [een1, setEen1] = useState(getEngravingList()[0]);
+    const [een1, setEen1] = useState(engravingLists.classBattle()[0]);
     const [een1_lvl, setEen1_lvl] = useState(0);
-    const [een2, setEen2] = useState(getEngravingList()[0]);
+    const [een2, setEen2] = useState(engravingLists.classBattle()[0]);
     const [een2_lvl, setEen2_lvl] = useState(0);
 
     const accessoryValues = {

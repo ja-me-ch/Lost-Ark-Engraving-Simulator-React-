@@ -8,5 +8,7 @@ This is an update to the pure JS version that can be found [here](https://github
 
  Todos:
 
--Highlight Relevant Engraving Diamond Nodes on Hover
+- Add a reset button
+
+- Refactor, specifically the context and states
 

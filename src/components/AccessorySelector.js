@@ -17,7 +17,7 @@ export const SelectStyle = styled(Select)((props) => ({
 function AccessorySelector(props) {
     const { accessoryType, accessory } = props;
 
-    //classBattle and negative are callback functions that return arrays
+    //classBattle is a callback functions that return arrays
     const { battle, classEn, classBattle, negative } = props.engravingLists;
 
     const acc_maxLvl = 5;
@@ -29,7 +29,7 @@ function AccessorySelector(props) {
         let selectedEngravingList = []
 
         if (isNeg === true) {
-            selectedEngravingList = negative();
+            selectedEngravingList = negative;
         }
 
         else if (accessoryType === 'abilityStone') {
