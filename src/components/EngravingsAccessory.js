@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { Select, MenuItem } from '@mui/material';
+import { Button, MenuItem } from '@mui/material';
 import { styled } from '@mui/system';
 import { EngravingContext } from '../contexts/EngravingSimulatorContext';
 import { SelectStyle } from './AccessorySelector';
@@ -7,6 +7,10 @@ import { SelectStyle } from './AccessorySelector';
 import AccessorySelector from './AccessorySelector';
 
 const RootStyle = styled('div')((props) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     margin: '0rem 1rem 2rem 1rem'
 }));
 
@@ -31,6 +35,16 @@ const SlotTitleStyle = styled('h3')((props) => ({
     fontWeight: '500',
     textTransform: 'uppercase',
     letterSpacing: '1px'
+}));
+
+const ResetButton = styled(Button)((props) => ({
+    color: 'rgb(249, 249, 249)',
+    border: '1px solid rgb(249, 249, 249)',
+    width: '15%',
+    margin: '10px 0',
+    '&:hover': {
+        borderColor: 'black'
+    }
 }))
 
 function EngravingsAccessory() {
@@ -69,11 +83,11 @@ function EngravingsAccessory() {
 
     return (
         <RootStyle>
-            <button onClick={() => {
+            <ResetButton variant='outlined' onClick={() => {
                 reset();
             }}>
                 Reset
-            </button>
+            </ResetButton>
             <GroupSelectors>
                 <EngravingGroup>
                     <SlotTitleStyle>Class</SlotTitleStyle>
