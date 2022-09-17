@@ -67,9 +67,9 @@ export function EngravingProvider(props) {
     const [ring2_negative_lvl, setRing2_negative_lvl] = useState(0);
 
     //ability stone
-    const [abilityStone_en1, setAbilityStone_en1] = useState(battleEngravings[0]);
+    const [abilityStone_en1, setAbilityStone_en1] = useState(engravingLists.battle[0]);
     const [abilityStone_en1_lvl, setAbilityStone_en1_lvl] = useState(0);
-    const [abilityStone_en2, setAbilityStone_en2] = useState(battleEngravings[0]);
+    const [abilityStone_en2, setAbilityStone_en2] = useState(engravingLists.battle[0]);
     const [abilityStone_en2_lvl, setAbilityStone_en2_lvl] = useState(0);
     const [abilityStone_neg, setAbiltyStone_neg] = useState(engravingLists.negative[0]);
     const [abilityStone_neg_lvl, setAbilityStone_neg_lvl] = useState(0)
@@ -217,9 +217,34 @@ export function EngravingProvider(props) {
         }
     }
 
+    const reset = function (e) {
+        const { necklace, earring1, earring2, ring1, ring2, abilityStone, equipped_en } = accessoryValues;
+        const slots = [necklace, earring1, earring2, ring1, ring2];
+        slots.forEach(slot => {
+            slot.en1.setEn(engravingLists.classBattle()[0]);
+            slot.en1.setLvl(0);
+            slot.en2.setEn(engravingLists.classBattle()[0]);
+            slot.en2.setLvl(0);
+            slot.neg.setEn(engravingLists.negative[0]);
+            slot.neg.setLvl(0);
+        });
+
+        abilityStone.en1.setEn(engravingLists.battle[0]);
+        abilityStone.en1.setLvl(0);
+        abilityStone.en2.setEn(engravingLists.battle[0])
+        abilityStone.en2.setLvl(0)
+        abilityStone.neg.setEn(engravingLists.negative[0])
+        abilityStone.neg.setLvl(0)
+
+        equipped_en.en1.setEn(engravingLists.classBattle()[0]);
+        equipped_en.en1.setLvl(0);
+        equipped_en.en2.setEn(engravingLists.classBattle()[0]);
+        equipped_en.en2.setLvl(0);
+    }
+
     return (
         <EngravingContext.Provider
-            value={{ classData, engravingLists, accessoryValues }}
+            value={{ classData, engravingLists, accessoryValues, reset }}
         >
             {props.children}
         </EngravingContext.Provider>

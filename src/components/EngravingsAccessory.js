@@ -34,7 +34,7 @@ const SlotTitleStyle = styled('h3')((props) => ({
 }))
 
 function EngravingsAccessory() {
-    const { classData, accessoryValues, engravingLists } = useContext(EngravingContext);
+    const { classData, accessoryValues, engravingLists, reset } = useContext(EngravingContext);
 
     useEffect(() => {
         const slotNames = [];
@@ -69,6 +69,11 @@ function EngravingsAccessory() {
 
     return (
         <RootStyle>
+            <button onClick={() => {
+                reset();
+            }}>
+                Reset
+            </button>
             <GroupSelectors>
                 <EngravingGroup>
                     <SlotTitleStyle>Class</SlotTitleStyle>
