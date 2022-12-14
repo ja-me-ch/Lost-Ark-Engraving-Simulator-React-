@@ -39,6 +39,9 @@ const classEngravings = [
         class: 'Sharpshooter', engravings: ['Death Strike', 'Loyal Companion']
     },
     {
+        class: 'Machinist', engravings: ['Arthetinean Skill', 'Evolutionary Legacy']
+    },
+    {
         class: 'Bard', engravings: ['Desperate Salvation', 'True Courage']
     },
     {
@@ -48,10 +51,16 @@ const classEngravings = [
         class: 'Arcanist', engravings: ['Empress\'s Grace', 'Order of the Emperor']
     },
     {
+        class: 'Summoner', engravings: ['Communication Overflow', 'Master Summoner']
+    },
+    {
         class: 'Shadowhunter', engravings: ['Demonic Impulse', 'Perfect Suppression']
     },
     {
         class: 'Deathblade', engravings: ['Surge', 'Remaining Energy']
+    },
+    {
+        class: 'Reaper', engravings: ['Hunger', 'Lunar Voice']
     }
 ]
 
