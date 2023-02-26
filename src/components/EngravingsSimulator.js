@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import EngravingsAccessory from './EngravingsAccessory';
 import EngravingsDisplay from './EngravingsDisplay';
 import { EngravingProvider } from '../contexts/EngravingSimulatorContext';

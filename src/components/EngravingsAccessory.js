@@ -67,6 +67,7 @@ function EngravingsAccessory() {
                 }
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [classData.selectedClass])
 
     let classMenuItems = [];
@@ -165,10 +166,6 @@ function EngravingsAccessory() {
         </RootStyle>
     )
 }
-
-const SelectorRow = styled('div')((props) => ({
-
-}))
 
 export default EngravingsAccessory;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, MenuItem, Menu, FormControl } from '@mui/material';
+import { Select, MenuItem, FormControl } from '@mui/material';
 import { v4 as uuid } from 'uuid';
 // import battleEngravings from '../engravings/battleEngravings';
 import { styled } from '@mui/material/styles';
@@ -18,12 +18,7 @@ function AccessorySelector(props) {
     const { accessoryType, accessory } = props;
 
     //classBattle is a callback functions that return arrays
-    const { battle, classEn, classBattle, negative } = props.engravingLists;
-
-    const acc_maxLvl = 5;
-    const een_maxLvl = 12; //equipped engraving
-    const neg_maxLvl = 3;
-    const as_maxLvl = 10; //ability stone neg max lvl
+    const { battle, classBattle, negative } = props.engravingLists;
 
     function getEngravingList(isNeg) {
         let selectedEngravingList = []

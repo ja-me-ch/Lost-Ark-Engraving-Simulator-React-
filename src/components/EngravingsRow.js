@@ -1,19 +1,15 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 
-//filled &#11201;
-//unfilled &#9671;
-//1000px x 650px
-//675px x 80px
-const EngravingText = styled('div')((props) => ({
+const EngravingText = styled('div')(() => ({
     display: 'flex',
     justifyContent: 'space-between'
 }));
-const EngravingTitle = styled('div')((props) => ({
+const EngravingTitle = styled('div')(() => ({
     fontSize: '1.8rem'
 }));
 
-const OverlevelText = styled('div')((props) => ({
+const OverlevelText = styled('div')(() => ({
     color: 'red',
     fontSize: '1.8rem'
 }));
@@ -43,9 +39,6 @@ function EngravingsRow(props) {
         enLvl = Math.floor(lvl / 5);
     }
     if (RegExp(/Reduction/).test(en)) { negative = true; }
-
-    const filledNode = (<span>&#11201;</span>)
-    const unfilledNode = (<span style={{ fontSize: '1.92rem', color: 'rgba(128, 128, 128, 0.8)' }}>&#9671;</span>)
 
     const nodeElements = [];
 
