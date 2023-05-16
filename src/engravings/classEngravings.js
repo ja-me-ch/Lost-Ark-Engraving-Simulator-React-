@@ -17,7 +17,7 @@ const classEngravings = [
     },
     {
         class: "Slayer",
-        engravings: ["Slayer", "Punisher"],
+        engravings: ["Predator", "Punisher"],
     },
     {
         class: "Striker",
