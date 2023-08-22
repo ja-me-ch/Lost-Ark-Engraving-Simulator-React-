@@ -91,6 +91,10 @@ const classEngravings = [
         class: "Artist",
         engravings: ["Full Bloom", "Recurrence"],
     },
+    {
+        class: "Aeromancer",
+        engravings: ["Wind Fury", "Drizzle"],
+    },
 ];
 
 export default classEngravings;
